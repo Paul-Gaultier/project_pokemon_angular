@@ -1,0 +1,30 @@
+<!--{{title}} Pour appeler une variabe {{var}}-->
+<!-- Si on modifie la variable, elle sera modifiée aussi ici-->
+
+
+<!--crée une variable "pokemon et va me chercher les attributs de la l'objet pokemons -->
+<div class="m-5">
+    <h1 class="text-center"><img style="width: 350px;" src="assets/logo.png" alt=""></h1>
+    <h6 class="text-center text-muted"> Vous disposer de {{pokemons.length}}<i class="fa fa-check-circle"></i>pokemons !
+    </h6>
+    <h1 class="text-center"><img class="text-center" *ngFor="let pokemon of pokemons" style="width:50px;"
+            src="assets/pok.png" [title]="pokemon.name"></h1>
+</div>
+<section class="col-md-8 mx-auto">
+    <div class="row">
+        <div class="col-md-2 card" *ngFor="let pokemon of pokemons">
+            <!--crée une variable "pokemon et va me chercher les attributs de la l'objet pokemons -->
+            <!--Il va faire une boucle pour tous les élement de l'objet pokemons issu de la constante POKEMEONS-->
+            <img [src]="pokemon.picture" alt="">
+            <!--Le [] autours d'un attribut veux dire : prepare toi à reçevoir une variable (property byding)-->
+            <div class="card-body">
+                <p>Id: {{pokemon.id}}</p>
+                <!--Va me chercher l'attribut .name du nouvelle objet crée pokemon-->
+                <p>Nom: {{pokemon.name}}</p>
+                <p>Type: {{pokemon.type}}</p>
+                <p>Vie: {{pokemon.life}}</p>
+                <p>Capturé le: {{pokemon.created | date:"dd/MM/yyyy"}}</p>
+            </div>
+        </div>
+    </div>
+</section>
