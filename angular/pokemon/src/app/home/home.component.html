@@ -15,7 +15,8 @@
         <div class="col-md-2 card" *ngFor="let pokemon of pokemons">
             <!--crée une variable "pokemon et va me chercher les attributs de la l'objet pokemons -->
             <!--Il va faire une boucle pour tous les élement de l'objet pokemons issu de la constante POKEMEONS-->
-            <img [src]="pokemon.picture" alt="">
+        <img [src]="pokemon.picture" alt="">
+        <a [routerLink]="['detail',pokemon.id]">
             <!--Le [] autours d'un attribut veux dire : prepare toi à reçevoir une variable (property byding)-->
             <div class="card-body">
                 <p>Id: {{pokemon.id}}</p>
@@ -25,6 +26,10 @@
                 <p>Vie: {{pokemon.life}}</p>
                 <p>Capturé le: {{pokemon.created | date:"dd/MM/yyyy"}}</p>
             </div>
+            </a>
         </div>
     </div>
 </section>
+
+
+  
